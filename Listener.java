@@ -14,7 +14,7 @@ public class Listener extends Thread {
   int x;
   int y;
 
-  public Listener(Socket s,String name,Client client){
+  public Listener(Socket s, String name, Client client) {
       this.socket = s;
       this.name = name;
       this.client = client;
@@ -27,7 +27,7 @@ public class Listener extends Thread {
             }
         }
     }
-    public void run(){
+    public void run() {
         String line = "";
         while(true){
             try {
@@ -130,12 +130,12 @@ public class Listener extends Thread {
             }
         }
     }
-    public boolean judgeTie(){
+    public boolean judgeTie() {
         if(client.getChess().getModel().judgeTie()){
             return true;
         }return false;
     }
-    public boolean judgeWinner(int color){
+  public boolean judgeWinner(int color) {
         if(client.getChess().getModel().judgeLine(color)||
         client.getChess().getModel().judgeDiagonal(color)){
             return true;
